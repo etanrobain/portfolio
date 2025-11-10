@@ -1,90 +1,133 @@
-/* ===== Variables ===== */
-:root{
-    --bg:#f6f7fb;
-    --card:#ffffff;
-    --text:#1f2937;
-    --muted:#6b7280;
-    --accent:#4e54c8;
-    --accent-2:#8f94fb;
-    --radius:14px;
-    --shadow:0 10px 25px rgba(0,0,0,.06);
-  }
-  
-  /* ===== Reset utile ===== */
-  *{box-sizing:border-box}
-  html,body{margin:0;padding:0}
-  img{max-width:100%;height:auto;display:block}
-  
-  /* ===== Body / typographie ===== */
-  body{
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-    color:var(--text);
-    background:linear-gradient(180deg,#f3f5ff 0%, var(--bg) 30%);
-    line-height:1.6;
-  }
-  
-  /* ===== Navigation ===== */
-  header{position:sticky;top:0;z-index:50}
-  nav{
-    display:flex; gap:18px; align-items:center;
-    padding:14px 22px; background:rgba(255,255,255,.7);
-    backdrop-filter: blur(10px);
-    border-bottom:1px solid #eef;
-  }
-  nav a{
-    color:var(--text); text-decoration:none; font-weight:600;
-    padding:8px 12px; border-radius:10px; transition:all .2s ease;
-  }
-  nav a:hover{ background:#eef2ff; color:var(--accent) }
-  
-  /* ===== Layout de section ===== */
-  main > section{ padding:48px 20px }
-  .presentation-box,.cv-block,.hobby-box{
-    background:var(--card); border-radius:var(--radius);
-    padding:22px; margin:16px auto; max-width:1000px; box-shadow:var(--shadow);
-  }
-  
-  /* ===== Titres ===== */
-  h1,h2{ text-align:center; color:var(--accent); margin:0 0 18px }
-  h1{ font-size:clamp(28px, 3.5vw, 40px) }
-  h2{ font-size:clamp(22px, 3vw, 30px) }
-  h3{ margin:0 0 8px }
-  
-  /* ===== Texte secondaire ===== */
-  .presentation-box p, .cv-block p, .hobby-box p{ margin:8px 0 }
-  p small, .muted{ color:var(--muted) }
-  
-  /* ===== CV ===== */
-  .cv-container{
-    display:grid; gap:16px;
-    grid-template-columns: 1fr;
-  }
-  @media (min-width: 880px){
-    .cv-container{ grid-template-columns: repeat(3, 1fr) }
-  }
-  
-  /* ===== Tableau compétences ===== */
-  .competences-table{
-    width: min(100%, 1000px);
-    margin:12px auto; border-collapse: collapse; background:var(--card);
-    border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow);
-  }
-  .competences-table th,.competences-table td{
-    padding:12px; border:1px solid #e5e7eb; text-align:left;
-  }
-  .competences-table thead th{
-    background:linear-gradient(90deg,var(--accent),var(--accent-2));
-    color:white; border-color:transparent;
-  }
-  .niveau-1{ background:#f9fafb }
-  
-  /* ===== Footer ===== */
-  footer{ text-align:center; padding:40px 20px; color:var(--muted) }
-  
-  /* ===== Liens contenus ===== */
-  a{ color:var(--accent) }
-  a:hover{ opacity:.9 }
-  
-  /* ===== Petites améliorations ===== */
-  ::selection{ background:#cdd2ff }
-  
+/* ===== Variables (dark theme) ===== */
+:root {
+  --bg: #0f111a;
+  --card: #1b1e2b;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #7a7ffb;
+  --accent-2: #9b9ffb;
+  --radius: 14px;
+  --shadow: 0 10px 25px rgba(0,0,0,.5);
+}
+
+/* ===== Reset ===== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ===== Body / Typography ===== */
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(180deg, #11131f 0%, var(--bg) 100%);
+  line-height: 1.6;
+}
+
+/* ===== Navigation ===== */
+header { position: sticky; top: 0; z-index: 50; }
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 14px 22px;
+  background: rgba(27, 30, 43, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+}
+nav a:hover {
+  background: rgba(122, 127, 251, 0.15);
+  color: var(--accent);
+}
+
+/* ===== Sections Layout ===== */
+main > section { padding: 48px 20px; }
+
+.presentation-box,
+.cv-block,
+.hobby-box {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 22px;
+  margin: 16px auto;
+  max-width: 1000px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ===== Headings ===== */
+h1, h2 {
+  text-align: center;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+h1 { font-size: clamp(28px, 3.5vw, 40px); }
+h2 { font-size: clamp(22px, 3vw, 30px); }
+h3 { margin: 0 0 8px; color: #f3f4f6; }
+
+/* ===== Text ===== */
+.presentation-box p,
+.cv-block p,
+.hobby-box p {
+  margin: 8px 0;
+}
+p small, .muted { color: var(--muted); }
+
+/* ===== CV grid ===== */
+.cv-container {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 880px) {
+  .cv-container { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* ===== Skills table ===== */
+.competences-table {
+  width: min(100%, 1000px);
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.competences-table th,
+.competences-table td {
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: left;
+  color: var(--text);
+}
+.competences-table thead th {
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: #fff;
+  border-color: transparent;
+}
+.niveau-1 {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: #141621;
+}
+
+/* ===== Links ===== */
+a { color: var(--accent); transition: color 0.2s ease; }
+a:hover { color: var(--accent-2); }
+
+/* ===== Selection ===== */
+::selection { background: rgba(122, 127, 251, 0.35); color: white; }
