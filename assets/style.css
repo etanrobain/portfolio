@@ -1,4 +1,4 @@
-/* ===== Variables (black & white premium) ===== */
+/* ===== Variables (black & white premium glossy) ===== */
 :root {
   --bg: #050608;
   --bg-gloss: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.05), transparent 70%);
@@ -14,7 +14,9 @@
 }
 
 /* ===== Reset & base ===== */
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   margin: 0;
@@ -94,7 +96,9 @@ nav a:hover {
 }
 
 /* ===== Sections Layout ===== */
-main > section { padding: 48px 20px; }
+main > section {
+  padding: 48px 20px;
+}
 
 /* ===== Cards (About / CV / Hobbies) ===== */
 .presentation-box,
@@ -117,40 +121,51 @@ main > section { padding: 48px 20px; }
     background 0.22s ease-out;
 }
 
-/* petit reflet brillant en haut des cartes */
+/* Reflet glossy sur les cartes principales */
 .presentation-box::before,
 .cv-block::before,
 .hobby-box::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 28%;
-  width: 100%;
+  top: -10%;
+  left: -5%;
+  height: 45%;
+  width: 110%;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.28),
+    rgba(255,255,255,0.08),
+    transparent
+  );
+  filter: blur(6px);
   pointer-events: none;
-  opacity: 0.4;
-  transition: opacity 0.25s ease;
+  opacity: 0.55;
+  transition: opacity 0.28s ease;
 }
 
 .presentation-box:hover,
 .cv-block:hover,
 .hobby-box:hover {
   transform: translateY(-3px);
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
-  border-color: rgba(255, 255, 255, 0.14);
-  background-image: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(0,0,0,0.45));
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.9);
+  border-color: rgba(255, 255, 255, 0.18);
+  background-image: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.10),
+    rgba(0,0,0,0.5)
+  );
 }
 
 .presentation-box:hover::before,
 .cv-block:hover::before,
 .hobby-box:hover::before {
-  opacity: 0.75;
+  opacity: 1;
 }
 
 /* ===== Headings ===== */
-h1, h2 {
+h1,
+h2 {
   text-align: center;
   color: var(--accent);
   margin: 0 0 18px;
@@ -177,10 +192,14 @@ h3 {
 /* ===== Text ===== */
 .presentation-box p,
 .cv-block p,
-.hobby-box p { margin: 8px 0; }
+.hobby-box p {
+  margin: 8px 0;
+}
 
 p small,
-.muted { color: var(--muted); }
+.muted {
+  color: var(--muted);
+}
 
 /* ===== CV grid ===== */
 .cv-container {
@@ -192,18 +211,15 @@ p small,
   align-items: stretch;
 }
 
-/* Cartes de CV (glow + animation) */
+/* Cartes de CV (déjà glossy via règles globales) */
 .cv-block {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-height: 180px;
-  position: relative;
   overflow: hidden;
   animation: fadeUp 0.6s ease-out both;
 }
-
-/* le ::before des cv-block est déjà défini plus haut */
 
 /* ===== Bouton download CV ===== */
 .cv-download {
@@ -242,9 +258,15 @@ p small,
   }
 }
 
-.cv-block:nth-child(1) { animation-delay: 0s; }
-.cv-block:nth-child(2) { animation-delay: 0.08s; }
-.cv-block:nth-child(3) { animation-delay: 0.16s; }
+.cv-block:nth-child(1) {
+  animation-delay: 0s;
+}
+.cv-block:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.cv-block:nth-child(3) {
+  animation-delay: 0.16s;
+}
 
 /* ===== Details / dropdowns ===== */
 details {
@@ -275,7 +297,9 @@ details summary {
   font-weight: 600;
 }
 
-details summary::-webkit-details-marker { display: none; }
+details summary::-webkit-details-marker {
+  display: none;
+}
 
 details summary::before {
   content: "›";
@@ -358,19 +382,25 @@ a:hover {
     background 0.22s ease-out;
 }
 
-/* reflet glossy sur les skills */
+/* Reflet glossy sur les skills */
 .skill-card::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 26%;
-  width: 100%;
+  top: -8%;
+  left: -6%;
+  height: 42%;
+  width: 112%;
   border-radius: inherit;
-  background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent);
+  background: linear-gradient(
+    180deg,
+    rgba(255,255,255,0.32),
+    rgba(255,255,255,0.12),
+    transparent
+  );
+  filter: blur(7px);
   pointer-events: none;
-  opacity: 0.45;
-  transition: opacity 0.25s ease;
+  opacity: 0.6;
+  transition: opacity 0.28s ease;
 }
 
 .skill-card h3 {
@@ -395,9 +425,13 @@ a:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 46px rgba(0, 0, 0, 0.9);
   border-color: rgba(255, 255, 255, 0.18);
-  background-image: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(0,0,0,0.5));
+  background-image: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.13),
+    rgba(0,0,0,0.5)
+  );
 }
 
 .skill-card:hover::before {
-  opacity: 0.85;
+  opacity: 1;
 }
