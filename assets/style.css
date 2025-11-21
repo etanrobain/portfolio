@@ -130,15 +130,78 @@ p small,
 /* ===== CV grid ===== */
 .cv-container {
   display: grid;
-  gap: 16px;
-  grid-template-columns: 1fr;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  align-items: stretch; /* toutes les cartes ont la même hauteur */
 }
 
-@media (min-width: 880px) {
-  .cv-container {
-    grid-template-columns: repeat(3, 1fr);
+/* Cartes de CV (glow + animation) */
+.cv-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 180px;
+  position: relative;
+  overflow: hidden;
+  animation: fadeUp 0.6s ease-out both;
+}
+
+.cv-block::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(122, 127, 251, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.cv-block:hover::before {
+  opacity: 1;
+}
+
+/* ===== Bouton download CV ===== */
+.cv-download {
+  text-align: center;
+  margin: 20px 0 35px;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 12px 22px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.download-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.6);
+  opacity: 0.95;
+}
+
+/* ===== Animation CV fade-up ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
+
+.cv-block:nth-child(1) { animation-delay: 0s; }
+.cv-block:nth-child(2) { animation-delay: 0.08s; }
+.cv-block:nth-child(3) { animation-delay: 0.16s; }
 
 /* ===== Details / dropdowns ===== */
 details {
