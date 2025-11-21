@@ -1,7 +1,9 @@
 /* ===== Variables (black & white premium) ===== */
 :root {
   --bg: #050608;
+  --bg-gloss: radial-gradient(circle at 20% 0%, rgba(255,255,255,0.05), transparent 70%);
   --card: #111317;
+  --card-gloss: linear-gradient(145deg, rgba(255,255,255,0.06), rgba(0,0,0,0.4));
   --text: #f5f5f5;
   --muted: #a0a0a0;
   --accent: #ffffff;
@@ -26,7 +28,11 @@ body {
   padding-top: calc(var(--nav-h) + 10px); /* empêche la nav de recouvrir le titre */
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top, #1b1c20 0, #050608 55%);
+  background:
+    var(--bg-gloss),
+    radial-gradient(circle at bottom, rgba(255,255,255,0.03), transparent 50%),
+    radial-gradient(circle at top, #1b1c20 0, #050608 55%);
+  background-attachment: fixed;
   line-height: 1.6;
 }
 
@@ -56,6 +62,7 @@ nav {
   background: linear-gradient(90deg, #050608 0, #0d0f12 50%, #050608 100%);
   backdrop-filter: blur(16px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
   transition: background 0.25s ease, border-color 0.25s ease;
 }
 
@@ -72,11 +79,15 @@ nav a {
   font-size: 0.85rem;
   padding: 8px 14px;
   border-radius: 999px;
-  transition: background 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 nav a:hover {
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.09);
   color: var(--accent);
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(0,0,0,.7);
@@ -85,21 +96,42 @@ nav a:hover {
 /* ===== Sections Layout ===== */
 main > section { padding: 48px 20px; }
 
+/* ===== Cards (About / CV / Hobbies) ===== */
 .presentation-box,
 .cv-block,
 .hobby-box {
+  position: relative;
   background: var(--card);
+  background-image: var(--card-gloss);
   border-radius: var(--radius);
   padding: 22px;
   margin: 16px auto;
   max-width: 1000px;
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
   transition:
     transform 0.22s ease-out,
     box-shadow 0.22s ease-out,
     border-color 0.22s ease-out,
     background 0.22s ease-out;
+}
+
+/* petit reflet brillant en haut des cartes */
+.presentation-box::before,
+.cv-block::before,
+.hobby-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 28%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.16), transparent);
+  pointer-events: none;
+  opacity: 0.4;
+  transition: opacity 0.25s ease;
 }
 
 .presentation-box:hover,
@@ -108,7 +140,13 @@ main > section { padding: 48px 20px; }
   transform: translateY(-3px);
   box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
   border-color: rgba(255, 255, 255, 0.14);
-  background: #15181d;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.10), rgba(0,0,0,0.45));
+}
+
+.presentation-box:hover::before,
+.cv-block:hover::before,
+.hobby-box:hover::before {
+  opacity: 0.75;
 }
 
 /* ===== Headings ===== */
@@ -116,6 +154,7 @@ h1, h2 {
   text-align: center;
   color: var(--accent);
   margin: 0 0 18px;
+  text-shadow: 0 0 12px rgba(255,255,255,0.18);
 }
 
 h1 {
@@ -164,20 +203,7 @@ p small,
   animation: fadeUp 0.6s ease-out both;
 }
 
-.cv-block::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.25s ease;
-}
-
-.cv-block:hover::before {
-  opacity: 1;
-}
+/* le ::before des cv-block est déjà défini plus haut */
 
 /* ===== Bouton download CV ===== */
 .cv-download {
@@ -188,18 +214,19 @@ p small,
 .download-btn {
   display: inline-block;
   padding: 12px 22px;
-  background: linear-gradient(90deg, #ffffff, #d4d4d4);
+  background: linear-gradient(145deg, #ffffff, #d4d4d4);
   color: #050608;
   font-weight: 600;
   text-decoration: none;
   border-radius: 999px;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.85);
   transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 .download-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.95);
   opacity: 0.95;
 }
 
@@ -248,9 +275,7 @@ details summary {
   font-weight: 600;
 }
 
-details summary::-webkit-details-marker {
-  display: none;
-}
+details summary::-webkit-details-marker { display: none; }
 
 details summary::before {
   content: "›";
@@ -312,10 +337,12 @@ a:hover {
 }
 
 .skill-card {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background: var(--card);
+  background-image: var(--card-gloss);
   border-radius: var(--radius);
   padding: 24px;
   text-align: center;
@@ -323,7 +350,27 @@ a:hover {
   color: var(--text);
   box-shadow: var(--shadow);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  transition: transform 0.22s ease-out, box-shadow 0.22s ease-out, border-color 0.22s ease-out, background 0.22s ease-out;
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.22s ease-out,
+    box-shadow 0.22s ease-out,
+    border-color 0.22s ease-out,
+    background 0.22s ease-out;
+}
+
+/* reflet glossy sur les skills */
+.skill-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 26%;
+  width: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(255,255,255,0.18), transparent);
+  pointer-events: none;
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
 }
 
 .skill-card h3 {
@@ -348,5 +395,9 @@ a:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 46px rgba(0, 0, 0, 0.9);
   border-color: rgba(255, 255, 255, 0.18);
-  background: #181b21;
+  background-image: linear-gradient(145deg, rgba(255,255,255,0.13), rgba(0,0,0,0.5));
+}
+
+.skill-card:hover::before {
+  opacity: 0.85;
 }
