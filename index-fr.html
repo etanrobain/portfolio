@@ -9,28 +9,6 @@
   <link rel="icon" href="assets/img/favicon.ico" />
 </head>
 
-<script>
-    document.querySelectorAll(".side-lang a[data-lang]").forEach(link => {
-      link.addEventListener("click", (e) => {
-        e.preventDefault();
-  
-        const box = document.querySelector(".side-lang");
-        const target = link.getAttribute("href");
-  
-        // déclenche le slide avant de changer de page
-        box.classList.add("is-animating");
-  
-        if (link.dataset.lang === "fr") box.classList.add("is-fr");
-        if (link.dataset.lang === "en") box.classList.remove("is-fr");
-  
-        // redirection après l’anim
-        setTimeout(() => {
-          window.location.href = target;
-        }, 220);
-      });
-    });
-  </script>
-
 <body>
 
   <!-- ===== Navigation ===== -->
@@ -177,4 +155,27 @@
   </footer>
 
 </body>
+
+<script>
+    document.querySelectorAll(".side-lang a[data-lang]").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+  
+        const box = document.querySelector(".side-lang");
+        const target = link.getAttribute("href");
+  
+        // déclenche le slide avant de changer de page
+        box.classList.add("is-animating");
+  
+        if (link.dataset.lang === "fr") box.classList.add("is-fr");
+        if (link.dataset.lang === "en") box.classList.remove("is-fr");
+  
+        // redirection après l’anim
+        setTimeout(() => {
+          window.location.href = target;
+        }, 220);
+      });
+    });
+  </script>
+  
 </html>
