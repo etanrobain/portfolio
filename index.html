@@ -152,25 +152,26 @@
 </body>
 
 <script>
-  document.querySelectorAll(".side-lang a[data-lang]").forEach(link => {
-    link.addEventListener("click", (e) => {
-      e.preventDefault();
+  const box = document.querySelector(".side-lang");
 
-      const box = document.querySelector(".side-lang");
-      const target = link.getAttribute("href");
+  if (box) {
+    box.querySelectorAll("a[data-lang]").forEach((link) => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
 
-      // déclenche le slide avant de changer de page
-      box.classList.add("is-animating");
+        const target = link.getAttribute("href");
+        box.classList.add("is-animating");
 
-      if (link.dataset.lang === "fr") box.classList.add("is-fr");
-      if (link.dataset.lang === "en") box.classList.remove("is-fr");
+        // bascule dans les deux sens
+        if (link.dataset.lang === "fr") box.classList.add("is-fr");
+        if (link.dataset.lang === "en") box.classList.remove("is-fr");
 
-      // redirection après l’anim
-      setTimeout(() => {
-        window.location.href = target;
-      }, 220);
+        setTimeout(() => {
+          window.location.href = target;
+        }, 220);
+      });
     });
-  });
+  }
 </script>
 
 </html>
