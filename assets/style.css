@@ -401,3 +401,57 @@ a:hover {
 .skill-card:hover::before {
   opacity: 0.85;
 }
+
+/* ===== Skill pages ===== */
+.page-head {
+  padding: 48px 20px 12px;
+}
+
+.ac-wrapper {
+  padding: 18px 20px 60px;
+}
+
+.ac-accordion {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  gap: 14px;
+}
+
+.ac-item {
+  background: var(--card);
+  background-image: var(--card-gloss);
+  border-radius: var(--radius);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.ac-summary {
+  cursor: pointer;
+  padding: 16px 18px;
+  font-weight: 700;
+  list-style: none;
+}
+
+.ac-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.ac-summary::before {
+  content: "›";
+  display: inline-block;
+  margin-right: 10px;
+  color: var(--accent-2);
+  transform: rotate(0deg);
+  transition: transform 0.2s ease;
+}
+
+.ac-item[open] .ac-summary::before {
+  transform: rotate(90deg);
+}
+
+.ac-content {
+  padding: 0 18px 16px;
+  color: var(--muted);
+}

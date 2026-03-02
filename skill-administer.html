@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Compétence - Administrer</title>
+  <meta name="description" content="Compétence Administrer - AC en menu déroulant." />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="#ac">AC</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-head">
+      <h1>Administrer</h1>
+      <p class="section-intro">
+        AC (apprentissages critiques) - affichés en menus déroulants.
+      </p>
+    </section>
+
+    <section id="ac" class="ac-wrapper" aria-labelledby="ac-title">
+      <h2 id="ac-title">Apprentissages critiques</h2>
+
+      <div class="ac-accordion">
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.01 - Configurer et dépanner le routage dynamique dans un réseau</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : configurations, captures, tests de connectivité, commandes de vérification.</p>
+          </div>
+        </details>
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.02 - Configurer et expliquer une politique simple de QoS et les fonctions de base de la sécurité d’un réseau</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : classes QoS, policy-map, ACL, justification des choix, tests.</p>
+          </div>
+        </details>
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.03 - Déployer des postes clients et des solutions virtualisées adaptées à une situation donnée</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : VM, templates, réseau virtuel, procédures, validations.</p>
+          </div>
+        </details>
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.04 - Déployer des services réseaux avancés</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : DHCP, DNS, AD, supervision, etc. + tests de bon fonctionnement.</p>
+          </div>
+        </details>
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.05 - Identifier les réseaux opérateurs et l’architecture d’Internet</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : schémas, BGP/AS, peering/transit, analyse simple.</p>
+          </div>
+        </details>
+
+        <details class="ac-item">
+          <summary class="ac-summary">AC21.06 - Travailler en équipe pour développer ses compétences professionnelles</summary>
+          <div class="ac-content">
+            <p>Contenu / preuves : répartition des tâches, outils (Git), communication, bilan.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Etan Robain - <a href="mentions-legales.html">Legal notice</a></p>
+  </footer>
+</body>
+</html>
