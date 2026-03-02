@@ -9,6 +9,28 @@
   <link rel="icon" href="assets/img/favicon.ico" />
 </head>
 
+<script>
+    document.querySelectorAll(".side-lang a[data-lang]").forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+  
+        const box = document.querySelector(".side-lang");
+        const target = link.getAttribute("href");
+  
+        // déclenche le slide avant de changer de page
+        box.classList.add("is-animating");
+  
+        if (link.dataset.lang === "fr") box.classList.add("is-fr");
+        if (link.dataset.lang === "en") box.classList.remove("is-fr");
+  
+        // redirection après l’anim
+        setTimeout(() => {
+          window.location.href = target;
+        }, 220);
+      });
+    });
+  </script>
+
 <body>
 
   <!-- ===== Navigation ===== -->
@@ -21,7 +43,7 @@
       <!-- Language Switch -->
       <div class="side-lang is-fr" aria-label="Sélecteur de langue">
         <span class="lang-pill" aria-hidden="true"></span>
-        <a class="lang-item" href="index.html">EN</a>
+        <a class="lang-item" href="index.html" data-lang="en">EN</a>
         <a class="lang-item active" href="index-fr.html" aria-current="page">FR</a>
       </div>
     </nav>

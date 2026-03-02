@@ -543,3 +543,8 @@ a:hover {
 .lang-item:not(.active):hover {
   color: var(--text);
 }
+
+/* active l’animation au clic */
+.side-lang.is-animating .lang-pill {
+  transition: transform 0.22s ease;
+}
