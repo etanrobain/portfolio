@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio – Etan Robain</title>
+  <meta name="description" content="Portfolio d’Etan Robain (BUT Réseaux & Télécommunications) : profil, parcours, compétences et centres d’intérêt." />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="icon" href="assets/img/favicon.ico" />
+</head>
+
+<body>
+
+  <!-- ===== Navigation ===== -->
+  <header>
+    <nav>
+      <a href="#about">Présentation</a>
+      <a href="#resume">Parcours</a>
+      <a href="#skills">Compétences</a>
+      <a href="#hobbies">Centres d’intérêt</a>
+
+      <!-- Language Switch -->
+      <div class="lang-switch">
+        <button disabled>FR</button>
+        <button onclick="location.href='index.html'">EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== Présentation ===== -->
+    <section id="about" aria-labelledby="title-home">
+      <h1 id="title-home">Bienvenue sur mon portfolio</h1>
+
+      <div class="presentation-box">
+        <p>
+          Je suis <strong>Etan Robain</strong>, étudiant en Réseaux & Télécommunications.
+          Vous trouverez ici mon parcours, mes compétences ainsi qu’un aperçu de mes centres d’intérêt.
+        </p>
+        <p>
+          Faites défiler la page pour consulter mes coordonnées, mon parcours,
+          les compétences que je développe et quelques informations personnelles.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== Parcours ===== -->
+    <section id="resume" aria-labelledby="title-resume">
+      <h2 id="title-resume">Parcours</h2>
+
+      <div class="cv-download">
+        <a class="download-btn" href="assets/CV.pdf" download>
+          ⬇ Télécharger mon CV (PDF)
+        </a>
+      </div>
+
+      <div class="cv-container">
+
+        <section class="cv-block" aria-labelledby="resume-info">
+          <h3 id="resume-info">Coordonnées</h3>
+          <p>Nom : Etan Robain</p>
+          <p>Email : <a href="mailto:etanrobain.pro@gmail.com">etanrobain.pro@gmail.com</a></p>
+          <p>Téléphone : <a href="tel:+33695294942">+33 6 95 29 49 42</a></p>
+        </section>
+
+        <section class="cv-block" aria-labelledby="resume-exp">
+          <h3 id="resume-exp">Expérience</h3>
+          <ul>
+            <li>Stage – Leroy Merlin, équipe Réseaux (3e)</li>
+            <li>Stage – Leroy Merlin, équipe Développement (2nde)</li>
+          </ul>
+        </section>
+
+        <section class="cv-block" aria-labelledby="resume-edu">
+          <h3 id="resume-edu">Formation</h3>
+          <ul>
+            <li>BUT Réseaux & Télécommunications — 2024 – présent</li>
+            <li>Baccalauréat Général (Mention Assez Bien) — 2024</li>
+          </ul>
+        </section>
+
+      </div>
+    </section>
+
+    <!-- ===== Compétences ===== -->
+    <section id="skills" aria-labelledby="title-skills">
+      <h2 id="title-skills">Compétences</h2>
+
+      <p class="section-intro">
+        Chaque bloc mène vers une page dédiée présentant les apprentissages critiques associés.
+      </p>
+
+      <div class="skills-grid">
+
+        <a class="skill-card" href="skill-administer.html">
+          <h3>Administrer</h3>
+          <p>Niveau 2 – Administrer un réseau.</p>
+          <span class="skill-link">Voir les apprentissages critiques →</span>
+        </a>
+
+        <a class="skill-card" href="skill-connect.html">
+          <h3>Connecter</h3>
+          <p>Niveau 2 – Maîtriser les solutions de connectivité.</p>
+          <span class="skill-link">Voir les apprentissages critiques →</span>
+        </a>
+
+        <a class="skill-card" href="skill-code.html">
+          <h3>Coder</h3>
+          <p>Niveau 2 – Développer une application R&T.</p>
+          <span class="skill-link">Voir les apprentissages critiques →</span>
+        </a>
+
+        <a class="skill-card" href="skill-secure.html">
+          <h3>Sécuriser</h3>
+          <p>Niveau 2 – Mettre en œuvre un système sécurisé.</p>
+          <span class="skill-link">Voir les apprentissages critiques →</span>
+        </a>
+
+        <a class="skill-card" href="skill-monitor.html">
+          <h3>Superviser</h3>
+          <p>Niveau 2 – Mettre en place un système de supervision.</p>
+          <span class="skill-link">Voir les apprentissages critiques →</span>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ===== Centres d’intérêt ===== -->
+    <section id="hobbies" aria-labelledby="title-hobbies">
+      <h2 id="title-hobbies">Centres d’intérêt</h2>
+
+      <div class="hobby-box">
+        <h3>Sport</h3>
+        <p>
+          Le sport développe discipline, persévérance et esprit d’équipe.
+          Il permet de se dépasser et de maintenir un bon équilibre personnel.
+        </p>
+      </div>
+
+      <div class="hobby-box">
+        <h3>Jeux vidéo</h3>
+        <p>
+          Depuis l’enfance, les jeux vidéo sont un terrain d’exploration et de réflexion.
+          Ils ont également contribué à éveiller mon intérêt pour les réseaux et les technologies numériques.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>© 2025 Etan Robain — <a href="mentions-legales.html">Mentions légales</a></p>
+  </footer>
+
+</body>
+</html>
