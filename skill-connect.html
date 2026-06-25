@@ -30,47 +30,72 @@
       <div class="ac-accordion">
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC22.01 - Déployer et caractériser des systèmes de transmissions complexes
-          </summary>
+          <summary class="ac-summary">AC22.01 - Déployer et caractériser des systèmes de transmissions complexes</summary>
           <div class="ac-content">
-            <p>Preuves : mesures, modulations, analyse spectrale, caractérisation des performances.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Réalisé des mesures sur une chaîne de transmission et observé l'effet de différentes modulations.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Comprendre comment l'information est portée par un signal et ce qui en limite la qualité.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Banc de mesure et instruments, analyse spectrale, relevés de taux d'erreur, comparaison des modulations.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Interpréter les courbes et relier les mesures aux notions théoriques (bande passante, bruit).</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Le lien concret entre modulation, débit et robustesse face au bruit.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Multiplier les points de mesure pour obtenir des courbes plus exploitables.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC22.02 - Mettre en place un accès distant sécurisé
-          </summary>
+          <summary class="ac-summary">AC22.02 - Mettre en place un accès distant sécurisé</summary>
           <div class="ac-content">
-            <p>Preuves : VPN, SSH sécurisé, authentification forte, configuration et tests.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Configuré un accès distant par VPN et sécurisé l'administration via SSH par clés.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Permettre un accès au réseau depuis l'extérieur sans exposer les services en clair.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Tunnel VPN (IPsec / OpenVPN), SSH avec authentification par clé, désactivation du login root et tests depuis l'extérieur.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Régler les paramètres du tunnel (routes, chiffrement) pour que la connexion s'établisse de bout en bout.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Les bonnes pratiques d'un accès distant : clés plutôt que mots de passe, surface d'exposition minimale.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Ajouter une authentification multifacteur pour renforcer encore l'accès.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC22.03 - Mettre en place une connexion multi-site via un réseau opérateur
-          </summary>
+          <summary class="ac-summary">AC22.03 - Mettre en place une connexion multi-site via un réseau opérateur</summary>
           <div class="ac-content">
-            <p>Preuves : MPLS, IPsec, routage inter-sites, schémas d’architecture.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Simulé l'interconnexion de deux sites distants via un cœur opérateur, avec routage inter-sites.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Relier des agences d'une même entreprise comme le ferait un vrai déploiement WAN.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Maquette de réseau opérateur, tunnels IPsec, propagation des routes entre sites et schémas d'architecture.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Faire communiquer les sites à travers le réseau intermédiaire sans fuite de routes.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>La différence entre réseau client et réseau opérateur, et le rôle du routage à la frontière.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Comparer plusieurs technologies (MPLS vs VPN site-à-site) pour justifier le choix.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC22.04 - Déployer des réseaux d’accès des opérateurs
-          </summary>
+          <summary class="ac-summary">AC22.04 - Déployer des réseaux d'accès des opérateurs</summary>
           <div class="ac-content">
-            <p>Preuves : FTTH, GPON, architecture d’accès, équipements opérateur.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Étudié et maquetté une architecture d'accès fibre (FTTH / GPON), du central jusqu'à l'abonné.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Comprendre la « dernière boucle » qui relie réellement les usagers au réseau opérateur.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Étude de l'architecture (OLT, splitter, ONT), schématisation et manipulation d'équipements ou de simulateurs.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Assimiler le vocabulaire opérateur et la logique point-à-multipoint du GPON.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Le fonctionnement concret d'un déploiement fibre et le partage de la capacité entre abonnés.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Compléter par une visite ou une mesure terrain pour relier la théorie au réel.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC22.05 - Capacité à questionner un cahier des charges RT
-          </summary>
+          <summary class="ac-summary">AC22.05 - Capacité à questionner un cahier des charges RT</summary>
           <div class="ac-content">
-            <p>Preuves : analyse technique, contraintes, faisabilité, justification des choix.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Analysé un cahier des charges réseau pour en relever les contraintes, les manques et les choix à justifier.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Un besoin client est rarement complet : il faut le questionner avant de concevoir une solution.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Lecture critique du besoin, liste de questions au client, étude de faisabilité et propositions argumentées.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Distinguer ce qui est imposé de ce qui est négociable et formuler des questions pertinentes.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>L'importance de la phase d'analyse avant toute mise en œuvre technique.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Structurer l'analyse avec une grille (objectifs, contraintes, risques) plutôt qu'au fil de l'eau.</p></div>
+            </div>
           </div>
         </details>
 
