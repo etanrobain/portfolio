@@ -30,56 +30,86 @@
       <div class="ac-accordion">
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.01Cyber - Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité
-          </summary>
+          <summary class="ac-summary">AC24.01Cyber - Connaître et utiliser les bonnes pratiques et les recommandations de cybersécurité</summary>
           <div class="ac-content">
-            <p>Preuves : ANSSI, CIS benchmarks, gestion des mots de passe, MFA, politique de sécurité.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Appliqué des recommandations ANSSI / CIS pour durcir une configuration et défini une politique de mots de passe.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Réduire la surface d'attaque en partant de référentiels reconnus plutôt que d'habitudes.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Lecture des guides ANSSI, application d'un benchmark CIS, mise en place de MFA et d'une politique de mots de passe.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Prioriser les recommandations : toutes ne sont pas applicables ni au même niveau d'urgence.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>L'hygiène informatique de base et l'intérêt de s'appuyer sur des référentiels officiels.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Formaliser la politique de sécurité dans un vrai document de référence diffusable.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.02Cyber - Mettre en œuvre les outils fondamentaux de sécurisation d’une infrastructure du réseau
-          </summary>
+          <summary class="ac-summary">AC24.02Cyber - Mettre en œuvre les outils fondamentaux de sécurisation d'une infrastructure du réseau</summary>
           <div class="ac-content">
-            <p>Preuves : ACL, firewall, segmentation VLAN, NAT, durcissement réseau, journalisation.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Segmenté un réseau en VLAN, mis en place un pare-feu avec règles et activé la journalisation.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Cloisonner les services et contrôler les flux pour limiter la propagation d'une attaque.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>VLAN et routage inter-VLAN, règles de pare-feu par flux, NAT, ACL et logs centralisés.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Écrire des règles ni trop permissives ni trop strictes et vérifier leur effet réel.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>La défense en profondeur et l'importance des journaux pour comprendre ce qui se passe.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Mettre en place une revue régulière des règles pour éviter qu'elles ne se périment.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.03Cyber - Sécuriser les services
-          </summary>
+          <summary class="ac-summary">AC24.03Cyber - Sécuriser les services</summary>
           <div class="ac-content">
-            <p>Preuves : HTTPS/TLS, configuration sécurisée SSH, sécurisation DNS/DHCP, gestion certificats.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Sécurisé des services en activant HTTPS / TLS et en durcissant SSH, DNS et DHCP.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Un service exposé en clair est vulnérable à l'interception et à l'usurpation.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Certificats TLS, redirection HTTP→HTTPS, SSH par clés et options de durcissement des services.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Gérer les certificats (génération, validité, chaîne de confiance) et éviter les avertissements navigateur.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Le rôle du chiffrement et des certificats dans la confiance entre client et serveur.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Automatiser le renouvellement des certificats pour éviter les expirations.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.04Cyber - Choisir les outils cryptographiques adaptés au besoin fonctionnel du système d’information
-          </summary>
+          <summary class="ac-summary">AC24.04Cyber - Choisir les outils cryptographiques adaptés au besoin fonctionnel du système d'information</summary>
           <div class="ac-content">
-            <p>Preuves : choix algorithmes (AES, RSA, SHA-2), PKI, certificats, justification technique.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Comparé et choisi des algorithmes (AES, RSA, SHA-2) selon le besoin : confidentialité, intégrité, signature.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>Chaque besoin de sécurité appelle un outil cryptographique différent ; il faut savoir lequel.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Étude des familles (symétrique / asymétrique / hachage), mise en place d'une mini-PKI et justification des choix.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Distinguer clairement chiffrement, hachage et signature et leurs usages respectifs.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Les grands principes de la cryptographie appliquée et le rôle d'une PKI.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Approfondir la gestion du cycle de vie des clés (stockage, révocation).</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.05Cyber - Connaître les différents types d’attaque
-          </summary>
+          <summary class="ac-summary">AC24.05Cyber - Connaître les différents types d'attaque</summary>
           <div class="ac-content">
-            <p>Preuves : phishing, MITM, brute force, injection SQL, DoS/DDoS, élévation de privilèges.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Étudié et, en environnement contrôlé, observé plusieurs types d'attaques (MITM, brute force, injection SQL).</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>On ne se défend bien que contre ce que l'on comprend : il faut connaître le mode opératoire des attaques.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Lab isolé, scénarios d'attaque documentés, analyse des traces et identification des contre-mesures.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Rester strictement dans un cadre légal et maîtrisé tout en comprenant l'attaque.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>Le lien entre une vulnérabilité, son exploitation et la parade associée.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Relier chaque attaque à une recommandation concrète dans un tableau de synthèse.</p></div>
+            </div>
           </div>
         </details>
 
         <details class="ac-item">
-          <summary class="ac-summary">
-            AC24.06Cyber - Comprendre des documents techniques en anglais
-          </summary>
+          <summary class="ac-summary">AC24.06Cyber - Comprendre des documents techniques en anglais</summary>
           <div class="ac-content">
-            <p>Preuves : lecture RFC, documentations techniques, rapports CVE, exploitation de guides officiels.</p>
+            <div class="reflexion-grid">
+              <div class="reflexion-item"><strong>Ce que j'ai fait</strong><p>Exploité des documents techniques en anglais (RFC, CVE, documentations) pour configurer ou corriger.</p></div>
+              <div class="reflexion-item"><strong>Pourquoi je l'ai fait</strong><p>L'essentiel de la documentation technique et de sécurité est en anglais.</p></div>
+              <div class="reflexion-item"><strong>Comment je l'ai fait</strong><p>Lecture ciblée de RFC et de fiches CVE, application des préconisations et prise de notes.</p></div>
+              <div class="reflexion-item"><strong>Mes difficultés</strong><p>Le vocabulaire technique spécialisé et la densité de certains documents.</p></div>
+              <div class="reflexion-item"><strong>Ce que j'en ai appris</strong><p>À aller chercher l'information à la source plutôt que dans des résumés approximatifs.</p></div>
+              <div class="reflexion-item"><strong>Ce que je ferais autrement</strong><p>Me constituer un glossaire technique anglais-français au fil des lectures.</p></div>
+            </div>
           </div>
         </details>
 
